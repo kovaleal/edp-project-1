@@ -1,20 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Planet Details</title>
+    <link rel="stylesheet" href="site.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background 0.3s ease;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            background: #ecf0f1;
+            margin: 8px 0;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.2s ease;
+        }
+        
+        li:hover {
+            transform: translateX(5px);
+            background: #d5dbdb;
+        }
+    </style>
 </head>
 <body>
     <script defer src="./planet.js "></script>
-    <h1 id ="planet-name">Planet Name</h1>
-    <h2>
-        Characters
-    </h2>
-    <lu id ="planet-characters"></lu>
-    <h2>
-        Films
-    </h2>
-    <lu id="planet-films"></lu>
+    <div class="container">
+        <h1 id="planet-name" class="planet-title">Planet Name</h1>
+        
+        <section class="planet-section">
+            <h2>Characters</h2>
+            <button id="show-characters" class="toggle-btn">Show Characters</button>
+            <ul id="planet-characters" class="planet-list"></ul>
+        </section>
+        
+        <section class="planet-section">
+            <h2>Films</h2>
+            <button id="show-films" class="toggle-btn">Show Films</button>
+            <ul id="planet-films" class="planet-list"></ul>
+        </section>
+    </div>
 </body>
+
 </html>
