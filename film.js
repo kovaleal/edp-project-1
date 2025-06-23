@@ -15,10 +15,11 @@ async function getFilm() {
         .catch(err => console.error('Error reading film: ', err))
     
     console.log(film)
-    document.title = `Star Wars: ${film.title}`;
-
-    titleH1 = document.querySelector('h1#title');
-    titleH1.textContent = `Star Wars: ${film.title}`;
+    if (film.title !== undefined) {
+        document.title = `Star Wars: ${film.title}`;
+        titleH1 = document.querySelector('h1#title');
+        titleH1.textContent = `Star Wars: ${film.title}`;
+    }
 }
 
 async function getCharacters() {
@@ -44,7 +45,8 @@ function renderCharacters(characters) {
         return elem;
     })
 
-    const charactersList = document.querySelector("#charactersList");
+    const charactersList = document.querySelector("#charList");
+    //const br = document.createElement('br');
     charactersList.append(...divs);
 }
 
