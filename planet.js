@@ -28,6 +28,10 @@ async function getCharacters(id) {
     } else {
         characters.forEach(character => {
             const li = document.createElement('li');
+            li.addEventListener('click', () => {
+                window.location.href = `character.html?id=${character.id}`;
+            });
+            li.style.cursor = 'pointer';
             li.textContent = character.name;
             characterList.appendChild(li);
         });
@@ -54,6 +58,10 @@ async function getFilms(id) {
         const filmPromises = uniqueFilms.map(film => 
             getFilmTitle(film.film_id).then(title => {
                 const li = document.createElement('li');
+                li.addEventListener('click', () => {
+                    window.location.href = `film.html?id=${film.film_id}`;
+                });
+                li.style.cursor = 'pointer';
                 li.textContent = title;
                 filmList.appendChild(li);
             })
