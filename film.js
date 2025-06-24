@@ -19,7 +19,17 @@ async function getFilm() {
         document.title = `Star Wars: ${film.title}`;
         titleH1 = document.querySelector('h1#title');
         titleH1.textContent = `Star Wars: ${film.title}`;
+        renderFilms(film);
     }
+}
+
+function renderFilms(film) {
+    const release = document.querySelector("#release");
+    release.textContent = film.release_date;
+    const director = document.querySelector("#director");
+    director.textContent = film.director;
+    const episode = document.querySelector("#episode");
+    episode.textContent = film.episode_id;
 }
 
 async function getCharacters() {
